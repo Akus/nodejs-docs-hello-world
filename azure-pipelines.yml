@@ -35,6 +35,11 @@ stages:
       inputs:
         versionSpec: '20.x'
       displayName: 'Install Node.js'
+    - task: SonarQubePrepare@6
+      inputs:
+        SonarQube: 'Akos_Sonarqube_in_Azure_VM'
+        scannerMode: 'Other'
+        
     - task: SonarQubeAnalyze@6
       inputs:
         jdkversion: 'JAVA_HOME_17_X64'
